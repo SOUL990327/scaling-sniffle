@@ -3,6 +3,29 @@ import { Button } from "./ui/button";
 import { createClient } from "@/lib/supabase/server";
 import { LogoutButton } from "./logout-button";
 
+function extractNameFromEmail(email: string): string {
+  if (!email || typeof email !== "string") return "";
+
+  // Extract part before '@'
+  const username: string = email.split("@")[0];
+
+  // Remove non-letter characters and replace with space
+  const cleaned: string = username.replace(/[^a-zA-Z]/g, " ");
+
+  // Capitalize each word
+  const name: string = cleaned
+    .split(" ")
+    .filter(Boolean)
+    .map(
+      (word: string) =>
+        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    )
+    .join(" ");
+
+  return name.trim();
+}
+
+
 export async function AuthButton() {
   const supabase = await createClient();
 
@@ -12,7 +35,7 @@ export async function AuthButton() {
 
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {user.email}!
+      Hey, {extractNameFromEmail(user.email ? user.email : "")}!
       <LogoutButton />
     </div>
   ) : (
