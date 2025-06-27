@@ -9,8 +9,10 @@ export default async function Home() {
     redirect("/auth/login");
   }
   return (
-    <div>
-      <UploadForm />
-    </div>
+    <main className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="max-w-xl w-full px-6 py-12 bg-white rounded-xl shadow">
+        <UploadForm />
+      </div>
+    </main>
   );
 }

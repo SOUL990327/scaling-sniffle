@@ -31,8 +31,8 @@ export default async function ProtectedPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-6">
-      <section className="max-w-7xl mx-auto">
+    <main className="min-h-screen bg-gray-50">
+      <section className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">Art Gallery</h1>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

@@ -6,28 +6,28 @@ export default function HomePage() {
     <main className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
       <section
-  className="relative flex items-center justify-center bg-cover bg-center px-4 py-20 md:py-32"
-  style={{ backgroundImage: "url('/hero-image.png')" }}
->
-  <div className="absolute inset-0 bg-black bg-opacity-50" />
+        className="relative flex items-center justify-center bg-cover bg-center px-4 py-20 md:py-32"
+        style={{ backgroundImage: "url('/hero-image.avif')" }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-50" />
 
-  <div className="relative z-10 text-center text-white max-w-2xl w-full">
-    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-      Discover Inspiring Art
-    </h1>
-    <p className="text-base sm:text-lg md:text-xl mb-6 px-2">
-      A curated collection of creativity and imagination.
-    </p>
-    <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
-      <Link href="/art/view" className="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-200">
-        View Gallery
-      </Link>
-      <button className="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black">
-        See Events
-      </button>
-    </div>
-  </div>
-</section>
+        <div className="relative z-10 text-center text-white max-w-2xl w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            Discover Inspiring Art
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl mb-6 px-2">
+            A curated collection of creativity and imagination.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
+            <Link href="/art/view" className="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-200">
+              View Gallery
+            </Link>
+            <button className="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black">
+              See Events
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* Featured Collections */}
       <section className="py-16 px-4 max-w-7xl mx-auto">
@@ -35,7 +35,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-8">
           {["Paintings", "Photography", "Mixed Media"].map((category) => (
             <div key={category} className="group rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
-              <Image src={`/${category.toLowerCase().replace(/\s/g, '-')}.png`} width={"160"} height={160} alt={category} className="w-full h-64 object-contain" />
+              <Image src={`/${category.toLowerCase().replace(/\s/g, '-')}.avif`} width={"160"} height={160} alt={category} className="w-full h-64 object-contain" />
               <div className="p-4">
                 <h3 className="text-xl font-medium">{category}</h3>
               </div>
@@ -48,7 +48,7 @@ export default function HomePage() {
       <section className="py-16 bg-gray-50 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-6">Spotlight</h2>
-          <Image src="/profile.png" alt="Featured Creator" width={160} height={160} className="w-40 h-40 mx-auto rounded-full mb-4 object-cover" />
+          <Image src="/profile.avif" alt="Featured Creator" width={160} height={160} className="w-40 h-40 mx-auto rounded-full mb-4 object-cover" />
           <h3 className="text-xl font-semibold">Alex Morgan</h3>
           <p className="mt-2 text-gray-600">Blending emotion and form, Alex's creations reflect a journey through color and space.</p>
           <button className="mt-4 px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800">View Profile</button>
